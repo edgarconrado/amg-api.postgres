@@ -22,6 +22,15 @@ import { DetailsModule } from './details/details.module';
       autoLoadEntities: true,
       synchronize: true,
       logging: true,
+      ssl: process.env.POSTGRES_SSL === 'true',
+      extra: {
+        ssl:
+          process.env.POSTGRES_SSL === 'true'
+            ? {
+                rejectUnauthorized: false,
+              }
+            : null,
+      },
     }),
     CommonModule,
     ProductsModule,
