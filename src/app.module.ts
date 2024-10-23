@@ -22,10 +22,10 @@ import { DetailsModule } from './details/details.module';
       autoLoadEntities: true,
       synchronize: true,
       logging: true,
-      ssl: process.env.POSTGRES_SSL === 'true',
+      ssl: process.env.DB_SSL === 'true',
       extra: {
         ssl:
-          process.env.POSTGRES_SSL === 'true'
+          process.env.DB_SSL === 'true'
             ? {
                 rejectUnauthorized: false,
               }
