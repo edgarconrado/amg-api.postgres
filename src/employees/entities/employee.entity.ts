@@ -9,12 +9,31 @@ export class Employee {
   id: number;
 
   @Column()
+  @ApiProperty({ description: 'Nombre de Usuario del empleado' })
+  user_name: string;
+
+  @Column({
+    select: false,
+  })
+  @ApiProperty({ description: 'Password deacceso del empleado' })
+  password: string;
+
+  @Column()
   @ApiProperty({ description: 'Nombre del empleado' })
   name: string;
 
-  @Column()
+  @Column({
+    default: true,
+  })
+  @ApiProperty({ description: 'Status del Empleado' })
+  isActive: boolean;
+
+  @Column('text', {
+    array: true,
+    default: ['user'],
+  })
   @ApiProperty({ description: 'Puesto del empleado' })
-  position: string;
+  roles: string[];
 
   @Column({ type: 'date' })
   @ApiProperty({ description: 'Fecha de contratación del empleado' })

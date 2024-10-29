@@ -7,7 +7,6 @@ import { EmployeesModule } from './employees/employees.module';
 import { ProductsModule } from './products/products.module';
 import { SalesModule } from './sales/sales.module';
 import { DetailsModule } from './details/details.module';
-
 @Module({
   imports: [
     ConfigModule.forRoot(),
